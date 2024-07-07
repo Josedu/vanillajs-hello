@@ -13,17 +13,31 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
-    </div>
+    <button onclick="mostrarExcusa()">Generar Excusa</button>
+    <p><p id="excuse"></p></p>
+    <script>
+      let who = ["The dog", "My grandma", "The mailman", "My bird"];
+ let action = ["ate", "peed", "crushed", "broke"];
+let what = ["my homework", "my phone", "the car"];
+let when = [
+  "before the class",
+  "when I was sleeping",
+  "while I was exercising",
+  "during my lunch",
+  "while I was praying"
+];
+
+function generarExcusa() {
+  const part1 = who[Math.floor(Math.random() * who.length)];
+  const part2 = action[Math.floor(Math.random() * action.length)];
+  const part3 = what[Math.floor(Math.random() * what.length)];
+  const part4 = when[Math.floor(Math.random() * when.length)];
+  return part1 + " " + part2 + " " + part3 + " " + part4 + ".";
+}
+      function mostrarExcusa() {
+          const excusa = generarExcusa();
+          document.getElementById('excuse').innerHTML = excusa;
+      }
+  </script>
   </body>
 </html>
